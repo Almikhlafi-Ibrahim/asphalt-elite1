@@ -85,14 +85,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "نخبة الأسفلت | مقاولات الطرق والبنية التحتية" },
+      {
+        name: "description",
+        content:
+          "نخبة الأسفلت شركة رائدة في رصف الأسفلت وإنشاء الطرق وشبكات المياه والصرف والأعمال الإنشائية والخرسانية بجودة ومتانة وإتقان.",
+      },
+      { name: "author", content: "نخبة الأسفلت" },
+      { property: "og:title", content: "نخبة الأسفلت | مقاولات الطرق والبنية التحتية" },
+      {
+        property: "og:description",
+        content:
+          "خبرة وريادة في رصف الأسفلت وإنشاء الطرق وشبكات البنية التحتية والأعمال الخرسانية.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
