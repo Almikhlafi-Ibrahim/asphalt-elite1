@@ -1,57 +1,39 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/site";
+import { useI18n } from "@/lib/i18n";
 import asphaltImg from "@/assets/photo_2026-06-20_20-18-31.jpg.asset.json";
 import networksImg from "@/assets/photo_2026-06-20_20-17-36.jpg.asset.json";
 import concreteImg from "@/assets/photo_2026-06-20_20-17-49.jpg.asset.json";
 
-const SERVICES = [
-  {
-    image: asphaltImg.url,
-    title: "رصف الأسفلت والطرق",
-    desc: "أعمال أسفلتية متكاملة من قشط ورش سائل وفرد ورص طبقات الأسفلت لتنفيذ طرق متينة بمواصفات عالية.",
-    features: ["قشط ورش طبقات التأسيس", "فرد ورص الأسفلت", "تنفيذ الطرق والساحات", "صيانة وإصلاح الطرق"],
-  },
-  {
-    image: networksImg.url,
-    title: "شبكات البنية التحتية",
-    desc: "تنفيذ كافة أعمال شبكات المياه والصرف الصحي وتصريف السيول وأعمال الكهرباء بكفاءة واحترافية.",
-    features: ["شبكات المياه والصرف الصحي", "تصريف السيول", "أعمال الكهرباء", "أعمال الحفر والردم"],
-  },
-  {
-    image: concreteImg.url,
-    title: "الإنشاءات والخرسانة",
-    desc: "أعمال البناء والخرسانة المسلحة من الأساسات والأعمدة إلى الهياكل الإنشائية بدقة هندسية عالية.",
-    features: ["الأساسات والقواعد", "الخرسانة المسلحة", "أعمال البناء", "العزل والتشطيبات"],
-  },
-];
+const IMAGES = [asphaltImg.url, networksImg.url, concreteImg.url];
 
 export function Services() {
+  const { t } = useI18n();
   return (
     <section id="services" className="bg-secondary/60 py-24">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-widest text-amber">
-            خدماتنا
+            {t.services.eyebrow}
           </span>
           <h2 className="mt-3 font-display text-3xl font-extrabold text-foreground sm:text-4xl">
-            حلول متكاملة للطرق والبنية التحتية
+            {t.services.title}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            نقدّم ثلاثة محاور رئيسية من الخدمات لتغطية مشروعك من الأساس حتى
-            التسليم.
+            {t.services.desc}
           </p>
         </div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-3">
-          {SERVICES.map((s) => (
+          {t.services.items.map((s, i) => (
             <article
               key={s.title}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-1.5"
             >
               <div className="relative h-52 overflow-hidden">
                 <img
-                  src={s.image}
+                  src={IMAGES[i]}
                   alt={s.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -82,8 +64,8 @@ export function Services() {
 
         <div className="mt-12 text-center">
           <Button asChild variant="whatsapp" size="xl">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              اطلب عرض سعر الآن
+            <a href={whatsappLink(t.whatsappMessage)} target="_blank" rel="noopener noreferrer">
+              {t.services.cta}
             </a>
           </Button>
         </div>
