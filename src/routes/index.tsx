@@ -7,6 +7,7 @@ import { Projects } from "@/components/site/Projects";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { I18nProvider } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
