@@ -100,6 +100,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "نخبة الأسفلت | مقاولات الطرق والبنية التحتية" },
+      { name: "description", content: "Asphalt Elite Showcase is a professional website for a construction and roadworks company." },
+      { property: "og:description", content: "Asphalt Elite Showcase is a professional website for a construction and roadworks company." },
+      { name: "twitter:description", content: "Asphalt Elite Showcase is a professional website for a construction and roadworks company." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d413fce7-eeef-4dc7-b1a5-81e5ee99e6ff/id-preview-153421fb--1e0cff57-b4d7-439e-9b70-86cacf06d913.lovable.app-1781977296976.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d413fce7-eeef-4dc7-b1a5-81e5ee99e6ff/id-preview-153421fb--1e0cff57-b4d7-439e-9b70-86cacf06d913.lovable.app-1781977296976.png" },
     ],
     links: [
       {
