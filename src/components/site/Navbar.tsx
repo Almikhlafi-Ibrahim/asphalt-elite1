@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NAV_LINKS, SITE, whatsappLink } from "@/lib/site";
+import { NAV_LINKS, whatsappLink } from "@/lib/site";
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png.asset.json";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, toggle } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,13 +29,13 @@ export function Navbar() {
     >
       <nav className="container-page flex h-18 items-center justify-between py-3">
         <a href="#home" className="flex items-center gap-3">
-          <span
-            className={cn(
-              "grid h-11 w-11 place-items-center rounded-md bg-[var(--gradient-deep)] font-display text-lg font-extrabold text-primary-foreground",
-            )}
-          >
-            نخ
-          </span>
+          <img
+            src={logo.url}
+            alt={t.site.name}
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-md object-contain"
+          />
           <span className="flex flex-col leading-tight">
             <span
               className={cn(
@@ -40,7 +43,7 @@ export function Navbar() {
                 scrolled ? "text-foreground" : "text-primary-foreground",
               )}
             >
-              {SITE.name}
+              {t.site.name}
             </span>
             <span
               className={cn(
@@ -48,7 +51,7 @@ export function Navbar() {
                 scrolled ? "text-muted-foreground" : "text-primary-foreground/75",
               )}
             >
-              {SITE.tagline}
+              {t.site.tagline}
             </span>
           </span>
         </a>
@@ -63,31 +66,56 @@ export function Navbar() {
                   scrolled ? "text-foreground" : "text-primary-foreground/90",
                 )}
               >
-                {link.label}
+                {t.nav[link.key]}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <button
+            onClick={toggle}
+            aria-label="Switch language"
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-md border px-3 py-2 text-sm font-bold transition-colors",
+              scrolled
+                ? "border-border text-foreground hover:bg-secondary"
+                : "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10",
+            )}
+          >
+            <Globe className="size-4" />
+            {t.langToggle}
+          </button>
           <Button asChild variant="whatsapp" size="lg">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+            <a href={whatsappLink(t.whatsappMessage)} target="_blank" rel="noopener noreferrer">
               <Phone className="size-4" />
-              تواصل معنا
+              {t.nav.contactCta}
             </a>
           </Button>
         </div>
 
-        <button
-          className={cn(
-            "lg:hidden",
-            scrolled ? "text-foreground" : "text-primary-foreground",
-          )}
-          onClick={() => setOpen((v) => !v)}
-          aria-label="القائمة"
-        >
-          {open ? <X className="size-7" /> : <Menu className="size-7" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={toggle}
+            aria-label="Switch language"
+            className={cn(
+              "inline-flex items-center gap-1 rounded-md border px-2.5 py-1.5 text-sm font-bold",
+              scrolled
+                ? "border-border text-foreground"
+                : "border-primary-foreground/30 text-primary-foreground",
+            )}
+          >
+            <Globe className="size-4" />
+            {t.langToggle}
+          </button>
+          <button
+            className={cn(scrolled ? "text-foreground" : "text-primary-foreground")}
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+          >
+            {open ? <X className="size-7" /> : <Menu className="size-7" />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -100,15 +128,15 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-secondary"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </a>
               </li>
             ))}
             <li className="pt-2">
               <Button asChild variant="whatsapp" size="lg" className="w-full">
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                <a href={whatsappLink(t.whatsappMessage)} target="_blank" rel="noopener noreferrer">
                   <Phone className="size-4" />
-                  تواصل معنا عبر واتساب
+                  {t.nav.contactCta}
                 </a>
               </Button>
             </li>

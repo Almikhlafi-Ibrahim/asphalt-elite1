@@ -1,25 +1,27 @@
 import { Phone, MapPin, MessageCircle, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE, whatsappLink } from "@/lib/site";
-
-const INFO = [
-  {
-    icon: MessageCircle,
-    title: "واتساب",
-    value: `+${SITE.whatsappNumber}`,
-    href: whatsappLink(),
-  },
-  {
-    icon: Phone,
-    title: "اتصال مباشر",
-    value: `+${SITE.whatsappNumber}`,
-    href: `tel:+${SITE.whatsappNumber}`,
-  },
-  { icon: MapPin, title: "الموقع", value: SITE.location },
-  { icon: Clock, title: "أوقات العمل", value: "السبت - الخميس: 8 ص - 6 م" },
-];
+import { useI18n } from "@/lib/i18n";
 
 export function Contact() {
+  const { t } = useI18n();
+  const INFO = [
+    {
+      icon: MessageCircle,
+      title: t.contact.info.whatsapp,
+      value: `+${SITE.whatsappNumber}`,
+      href: whatsappLink(t.whatsappMessage),
+    },
+    {
+      icon: Phone,
+      title: t.contact.info.call,
+      value: `+${SITE.whatsappNumber}`,
+      href: `tel:+${SITE.whatsappNumber}`,
+    },
+    { icon: MapPin, title: t.contact.info.location, value: t.site.location },
+    { icon: Clock, title: t.contact.info.hours, value: t.contact.info.hoursValue },
+  ];
+
   return (
     <section id="contact" className="relative overflow-hidden py-24">
       <div className="absolute inset-0" style={{ background: "var(--gradient-deep)" }} />
@@ -27,21 +29,20 @@ export function Contact() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="text-primary-foreground">
             <span className="text-sm font-bold uppercase tracking-widest text-amber">
-              تواصل معنا
+              {t.contact.eyebrow}
             </span>
             <h2 className="mt-3 font-display text-3xl font-extrabold sm:text-4xl">
-              جاهزون لتنفيذ مشروعك القادم
+              {t.contact.title}
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/85">
-              تواصل معنا مباشرة عبر واتساب للحصول على استشارة مجانية وعرض سعر
-              لمشروعك في رصف الأسفلت أو شبكات البنية التحتية أو الأعمال الإنشائية.
+              {t.contact.desc}
             </p>
 
             <div className="mt-9">
               <Button asChild variant="whatsapp" size="xl">
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                <a href={whatsappLink(t.whatsappMessage)} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="size-5" />
-                  ابدأ المحادثة عبر واتساب
+                  {t.contact.cta}
                 </a>
               </Button>
             </div>

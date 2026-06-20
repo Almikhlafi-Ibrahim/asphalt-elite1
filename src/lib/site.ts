@@ -9,13 +9,13 @@ export const SITE = {
 export const WHATSAPP_MESSAGE =
   "السلام عليكم، أرغب بالاستفسار عن خدمات نخبة الأسفلت.";
 
-export const whatsappLink = () =>
-  `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+export const whatsappLink = (message: string = WHATSAPP_MESSAGE) =>
+  `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 export const NAV_LINKS = [
-  { href: "#home", label: "الرئيسية" },
-  { href: "#about", label: "من نحن" },
-  { href: "#services", label: "خدماتنا" },
-  { href: "#projects", label: "مشاريعنا" },
-  { href: "#contact", label: "تواصل معنا" },
+  { href: "#home", key: "home" },
+  { href: "#about", key: "about" },
+  { href: "#services", key: "services" },
+  { href: "#projects", key: "projects" },
+  { href: "#contact", key: "contact" },
 ] as const;
