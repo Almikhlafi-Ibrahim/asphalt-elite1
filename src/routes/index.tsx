@@ -1,29 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Services } from "@/components/site/Services";
+import { Projects } from "@/components/site/Projects";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "نخبة الأسفلت | رصف الطرق وشبكات البنية التحتية" },
+      {
+        name: "description",
+        content:
+          "نخبة الأسفلت — شركة مقاولات متخصصة في رصف الأسفلت وإنشاء الطرق وشبكات المياه والصرف والكهرباء والأعمال الإنشائية والخرسانية بجودة ومتانة عالية في الرياض.",
+      },
+      { property: "og:title", content: "نخبة الأسفلت | رصف الطرق وشبكات البنية التحتية" },
+      {
+        property: "og:description",
+        content:
+          "خبرة وريادة في رصف الأسفلت وإنشاء الطرق وشبكات البنية التحتية والأعمال الخرسانية.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
