@@ -259,7 +259,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   return (
     <I18nContext.Provider
-      value={{ lang, setLang, toggle, t: translations[lang] }}
+      value={{ lang, setLang, toggle, t: translations[lang] as unknown as Dict }}
     >
       {children}
     </I18nContext.Provider>
