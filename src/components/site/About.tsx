@@ -1,6 +1,6 @@
 import { ShieldCheck, Target, Award, Layers } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import aboutImage from "@/assets/photo_2026-06-20_20-18-03.jpg.asset.json";
+import aboutImage from "@/assets/photo_2026-06-20_20-18-03.jpg";
 
 const ICONS = [ShieldCheck, Target, Award, Layers];
 
@@ -13,7 +13,7 @@ export function About() {
           <div className="relative">
             <div className="overflow-hidden rounded-2xl shadow-[var(--shadow-elegant)]">
               <img
-                src={aboutImage.url}
+                src={aboutImage}
                 alt={t.about.imageAlt}
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"

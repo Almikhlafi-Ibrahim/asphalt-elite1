@@ -2,12 +2,11 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
-import asphaltImg from "@/assets/photo_2026-06-20_20-18-31.jpg.asset.json";
-import networksImg from "@/assets/photo_2026-06-20_20-17-36.jpg.asset.json";
-import concreteImg from "@/assets/photo_2026-06-20_20-17-49.jpg.asset.json";
+import asphaltImg from "@/assets/photo_2026-06-20_20-18-31.jpg";
+import networksImg from "@/assets/photo_2026-06-20_20-17-36.jpg";
+import concreteImg from "@/assets/photo_2026-06-20_20-17-49.jpg";
 
-const IMAGES = [asphaltImg.url, networksImg.url, concreteImg.url];
-
+const IMAGES = [asphaltImg, networksImg, concreteImg];
 export function Services() {
   const { t } = useI18n();
   return (

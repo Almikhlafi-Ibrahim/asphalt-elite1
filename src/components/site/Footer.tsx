@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { NAV_LINKS, SITE, whatsappLink } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   const { t } = useI18n();
@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <img
-                src={logo.url}
+                src={logo}
                 alt={t.site.name}
                 width={44}
                 height={44}

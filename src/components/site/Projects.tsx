@@ -1,22 +1,38 @@
 import { useI18n } from "@/lib/i18n";
-import img1 from "@/assets/photo_2026-06-20_20-18-31.jpg.asset.json";
-import img2 from "@/assets/photo_2026-06-20_20-18-03.jpg.asset.json";
-import img3 from "@/assets/photo_2026-06-20_20-18-39.jpg.asset.json";
-import img4 from "@/assets/photo_2026-06-20_20-17-36.jpg.asset.json";
-import img5 from "@/assets/photo_2026-06-20_20-17-49.jpg.asset.json";
-import img6 from "@/assets/photo_2026-06-20_20-18-26.jpg.asset.json";
-import img7 from "@/assets/photo_2026-06-20_20-16-17.jpg.asset.json";
+// import img1 from "@/assets/photo_2026-06-20_20-18-31.jpg.asset.json";
+// import img2 from "@/assets/photo_2026-06-20_20-18-03.jpg.asset.json";
+// import img3 from "@/assets/photo_2026-06-20_20-18-39.jpg.asset.json";
+// import img4 from "@/assets/photo_2026-06-20_20-17-36.jpg.asset.json";
+// import img5 from "@/assets/photo_2026-06-20_20-17-49.jpg.asset.json";
+// import img6 from "@/assets/photo_2026-06-20_20-18-26.jpg.asset.json";
+// import img7 from "@/assets/photo_2026-06-20_20-16-17.jpg.asset.json";
 
+
+import img1 from "@/assets/photo_2026-06-20_20-18-31.jpg";
+import img2 from "@/assets/photo_2026-06-20_20-18-03.jpg";
+import img3 from "@/assets/photo_2026-06-20_20-18-39.jpg";
+import img4 from "@/assets/photo_2026-06-20_20-17-36.jpg";
+import img5 from "@/assets/photo_2026-06-20_20-17-49.jpg";
+import img6 from "@/assets/photo_2026-06-20_20-18-26.jpg";
+import img7 from "@/assets/photo_2026-06-20_20-16-17.jpg";
+// const LAYOUT = [
+//   { src: img1.url, span: "lg:col-span-2 lg:row-span-2" },
+//   { src: img2.url, span: "" },
+//   { src: img3.url, span: "" },
+//   { src: img4.url, span: "lg:col-span-2" },
+//   { src: img5.url, span: "" },
+//   { src: img6.url, span: "" },
+//   { src: img7.url, span: "lg:col-span-2" },
+// ];
 const LAYOUT = [
-  { src: img1.url, span: "lg:col-span-2 lg:row-span-2" },
-  { src: img2.url, span: "" },
-  { src: img3.url, span: "" },
-  { src: img4.url, span: "lg:col-span-2" },
-  { src: img5.url, span: "" },
-  { src: img6.url, span: "" },
-  { src: img7.url, span: "lg:col-span-2" },
+  { src: img1, span: "lg:col-span-2 lg:row-span-2" },
+  { src: img2, span: "" },
+  { src: img3, span: "" },
+  { src: img4, span: "lg:col-span-2" },
+  { src: img5, span: "" },
+  { src: img6, span: "" },
+  { src: img7, span: "lg:col-span-2" },
 ];
-
 export function Projects() {
   const { t } = useI18n();
   return (

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { NAV_LINKS, whatsappLink } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo.png";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -30,7 +30,7 @@ export function Navbar() {
       <nav className="container-page flex h-18 items-center justify-between py-3">
         <a href="#home" className="flex items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt={t.site.name}
             width={44}
             height={44}
