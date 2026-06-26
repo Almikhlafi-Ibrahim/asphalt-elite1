@@ -2,7 +2,7 @@ export const SITE = {
   name: "نخبة الأسفلت",
   nameEn: "Asphalt Elite",
   tagline: "ريادة في رصف الطرق والبنية التحتية",
-  whatsappNumber: "967777136688",
+  whatsappNumber: "966597522413",
   location: "الرياض، المملكة العربية السعودية",
 } as const;
 
