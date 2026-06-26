@@ -85,27 +85,104 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "نخبة الأسفلت | مقاولات الطرق والبنية التحتية" },
+      {
+        name: "google-site-verification",
+        content: "Zr8auoU9DrYnlz6xYt-UYBsaSM-udHrDnZ8qSBv_loQ",
+      },
+      {
+        title:
+          "سفلتة مداخل الفلل والمنازل بالرياض | سفلتة مواقف وأحواش | نخبة الأسفلت",
+      },
+
       {
         name: "description",
         content:
-          "نخبة الأسفلت شركة رائدة في رصف الأسفلت وإنشاء الطرق وشبكات المياه والصرف والأعمال الإنشائية والخرسانية بجودة ومتانة وإتقان.",
+          "متخصصون في سفلتة مداخل الفلل، مداخل المنازل، المواقف، الأحواش، والاستراحات في مدينة الرياض. تنفيذ سريع وجودة عالية وأسعار مناسبة مع معاينة مجانية.",
       },
+
+      {
+        name: "keywords",
+        content:
+          "سفلتة الرياض, سفلتة مداخل فلل بالرياض, سفلتة مداخل منازل, سفلتة مواقف, سفلتة أحواش, سفلتة استراحات, ترميم أسفلت, مقاول سفلتة الرياض, أسفلت الرياض",
+      },
+
       { name: "author", content: "نخبة الأسفلت" },
-      { property: "og:title", content: "نخبة الأسفلت | مقاولات الطرق والبنية التحتية" },
+
+      {
+        property: "og:title",
+        content:
+          "سفلتة مداخل الفلل والمواقف بالرياض | نخبة الأسفلت",
+      },
+
       {
         property: "og:description",
         content:
-          "خبرة وريادة في رصف الأسفلت وإنشاء الطرق وشبكات البنية التحتية والأعمال الخرسانية.",
+          "نوفر خدمات سفلتة مداخل الفلل، المواقف، الأحواش والاستراحات في الرياض بجودة عالية وأسعار منافسة.",
       },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "نخبة الأسفلت | مقاولات الطرق والبنية التحتية" },
-      { name: "description", content: "Asphalt Elite Showcase is a professional website for a construction and roadworks company." },
-      { property: "og:description", content: "Asphalt Elite Showcase is a professional website for a construction and roadworks company." },
-      { name: "twitter:description", content: "Asphalt Elite Showcase is a professional website for a construction and roadworks company." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d413fce7-eeef-4dc7-b1a5-81e5ee99e6ff/id-preview-153421fb--1e0cff57-b4d7-439e-9b70-86cacf06d913.lovable.app-1781977296976.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d413fce7-eeef-4dc7-b1a5-81e5ee99e6ff/id-preview-153421fb--1e0cff57-b4d7-439e-9b70-86cacf06d913.lovable.app-1781977296976.png" },
+
+      {
+        property: "og:type",
+        content: "website",
+      },
+
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+
+      {
+        name: "twitter:title",
+        content:
+          "سفلتة مداخل الفلل والمواقف بالرياض | نخبة الأسفلت",
+      },
+
+      {
+        name: "twitter:description",
+        content:
+          "أفضل خدمات سفلتة المداخل والمواقف والأحواش في الرياض مع سرعة في التنفيذ وجودة مضمونة.",
+      },
+
+      {
+        property: "og:image",
+        content: "/logo.png",
+      },
+
+      {
+        name: "twitter:image",
+        content: "/logo.png",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+
+          name: "نخبة الأسفلت",
+
+          image: "https://nokhbat-alasphalt.vercel.app/logo.png",
+
+          url: "https://nokhbat-alasphalt.vercel.app",
+
+          telephone: "+966597522413",
+
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "الرياض",
+            addressCountry: "SA",
+          },
+
+          areaServed: "الرياض",
+
+          description:
+            "متخصصون في سفلتة مداخل الفلل، المواقف، الأحواش، والاستراحات في مدينة الرياض.",
+
+          priceRange: "$$",
+
+          openingHours: "Sa-Th 08:00-18:00",
+        }),
+      },
     ],
     links: [
       {
@@ -122,10 +199,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="ar" dir="rtl">
-      <head>
-        <HeadContent />
-      </head>
+    <html lang="ar-SA" dir="rtl">      <head>
+      <HeadContent />
+    </head>
       <body>
         {children}
         <Scripts />

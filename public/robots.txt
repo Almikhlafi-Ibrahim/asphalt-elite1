@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://nokhbat-alasphalt.vercel.app/sitemap.xml

@@ -15,7 +15,7 @@ export const translations = {
     dir: "rtl",
     site: {
       name: "نخبة الأسفلت",
-      tagline: "ريادة في رصف الطرق والبنية التحتية",
+      tagline: "سفلتة مداخل الفلل والمواقف والأحواش في الرياض",
       location: "الرياض، المملكة العربية السعودية",
     },
     nav: {
@@ -28,10 +28,12 @@ export const translations = {
     },
     langToggle: "EN",
     hero: {
-      badge: "مقاولات الطرق والبنية التحتية",
-      titleLine1: "نبني طرقاً تدوم،",
+      badge: "متخصصون في أعمال الأسفلت بمدينة الرياض",
+      titleLine1: "سفلتة مداخل ,ومواقف الفلل",
       titleLine2: "بإتقان ومتانة وريادة",
-      desc: "شركة متخصصة في رصف الأسفلت عالي الجودة، وإنشاء الطرق، وشبكات المياه والصرف والكهرباء، والأعمال الإنشائية والخرسانية — بخبرة ميدانية وأسطول معدات متكامل.",
+      desc:
+
+        "نقدم خدمات سفلتة مداخل الفلل، المواقف، الأحواش، الاستراحات، والطرق الخاصة في مدينة الرياض باستخدام أفضل الخلطات الإسفلتية وأحدث المعدات مع تنفيذ سريع وجودة مضمونة.",
       ctaWhatsapp: "تواصل معنا عبر واتساب",
       ctaServices: "تعرّف على خدماتنا",
       stats: [
@@ -133,7 +135,7 @@ export const translations = {
     },
     langToggle: "ع",
     hero: {
-      badge: "Roadworks & Infrastructure Contracting",
+      tagline: "Villa Driveways, Parking Areas & Asphalt Services in Riyadh",
       titleLine1: "We build roads that last,",
       titleLine2: "with precision, durability & leadership",
       desc: "Asphalt Elite specializes in high-quality asphalt paving, road construction, water, drainage and electrical networks, and structural concrete works — backed by field experience and a complete fleet of equipment.",
