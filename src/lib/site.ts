@@ -1,7 +1,7 @@
 export const SITE = {
   name: "نخبة الأسفلت",
   nameEn: "Asphalt Elite",
-  tagline: "ريادة في رصف الطرق والبنية التحتية",
+  tagline: "سفلتة مداخل ,ومواقف الفلل",
   whatsappNumber: "966597522413",
   location: "الرياض، المملكة العربية السعودية",
 } as const;
